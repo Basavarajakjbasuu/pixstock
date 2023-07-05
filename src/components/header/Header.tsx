@@ -1,3 +1,5 @@
+import { useContext, useState, useEffect } from 'react'
+
 import {
   MdOutlineArrowBack,
   MdOutlineClose,
@@ -13,9 +15,29 @@ import {
 
 import './header.css'
 
-const Header = () => {
+import { ThemeContext } from "../../context/ThemeProvider";
+
+const Header: React.FC = () => {
+  const [isHeaderActive, setIsHeaderActive] = useState(false);
+
+  //activating header on scrollY > 50 with useEffect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsHeaderActive(scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+  const { toggleTheme } = useContext(ThemeContext);
   return (
-    <header className="top-app-bar active" data-header>
+    <header className={`top-app-bar ${isHeaderActive ? 'active' : ''}`} data-header>
       
       {/* menu */}
       <button
@@ -211,6 +233,7 @@ const Header = () => {
         aria-label="Switch theme"
         data-theme-toggler
         data-ripple
+        onClick={toggleTheme}
       >
         <span className="material-symbol-outlined dark-icon">
           <MdOutlineDarkMode />
