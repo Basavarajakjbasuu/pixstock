@@ -172,28 +172,28 @@
 
   --background: var(--dark-background);
   --on-background: var(--dark-on-background);
-  --surface: var( --dark-surface:);
+  --surface: var(--dark-surface);
   --on-surface: var(--dark-on-surface);
   --surface-variant: var(--dark-surface-variant);
   --on-surface-variant: var(--dark-on-surface);
   --surface-container-high: var(--dark-surface-container); 
   --surface-container-highest: var(--dark-surface-container);
   --surface-container: var(--dark-surface-container);
-  --outline: var( --dark-outline:);
+  --outline: var(--dark-outline);
   --outline-variant: var(--dark-outline-variant);
-  --primary: var( --dark-primary:);
+  --primary: var( --dark-primary);
   --on-primary: var(--dark-on-primary);
   --primary-container: var(--dark-primary-container);
   --on-primary-container: var(--dark-on-primary);
-  --secondary: var(--dark-secondary:);
+  --secondary: var(--dark-secondary);
   --on-secondary: var(--dark-on-secondary);
   --secondary-container: var(--dark-secondary-container);
-  --on-secondary-container: var(--dark-on-secondary);
-  --tertiary: var(--dark-on-tertiary:);
+  --on-secondary-container: var(--dark-on-secondary-container);
+  --tertiary: var(--dark-on-tertiary);
   --on-tertiary: var(--dark-on-tertiary);
   --tertiary-container: var(--dark-tertiary-container);
   --on-tertiary-container: var(--dark-on-tertiary);
-  --error: var( --dark-error:);
+  --error: var( --dark-error);
   --on-error: var( --dark-on-error);
   --error-container: var(--dark-error-container);
   --on-error-container: var( --dark-on-error);
@@ -208,28 +208,28 @@
 
   --background: var(--light-background);
   --on-background: var(--light-on-background);
-  --surface: var( --light-surface:);
+  --surface: var(--light-surface);
   --on-surface: var(--light-on-surface);
   --surface-variant: var(--light-surface-variant);
   --on-surface-variant: var(--light-on-surface);
   --surface-container-high: var(--light-surface-container); 
   --surface-container-highest: var(--light-surface-container);
   --surface-container: var(--light-surface-container);
-  --outline: var( --light-outline:);
+  --outline: var(--light-outline);
   --outline-variant: var(--light-outline-variant);
-  --primary: var( --light-primary:);
+  --primary: var(--light-primary);
   --on-primary: var(--light-on-primary);
   --primary-container: var(--light-primary-container);
   --on-primary-container: var(--light-on-primary);
-  --secondary: var(--light-secondary:);
+  --secondary: var(--light-secondary);
   --on-secondary: var(--light-on-secondary);
   --secondary-container: var(--light-secondary-container);
-  --on-secondary-container: var(--light-on-secondary);
-  --tertiary: var(--light-on-tertiary:);
+  --on-secondary-container: var(--light-on-secondary-container);
+  --tertiary: var(--light-on-tertiary);
   --on-tertiary: var(--light-on-tertiary);
   --tertiary-container: var(--light-tertiary-container);
   --on-tertiary-container: var(--light-on-tertiary);
-  --error: var( --light-error:);
+  --error: var( --light-error);
   --on-error: var( --light-on-error);
   --error-container: var(--light-error-container);
   --on-error-container: var( --light-on-error);
@@ -302,3 +302,213 @@ button:disabled{
   cursor: default;
   opacity: 0.5;
 }
+
+
+/*------------------------------*\
+  #TYPOGRAPHY
+\*------------------------------*/
+
+.display-large {
+  font-size: var(--fs-display-large);
+  font-weight: var(--weight-regular);
+  line-height: 64px;
+}
+
+.display-medium {
+  font-size: var(--fs-display-medium);
+  font-weight: var(--weight-regular);
+  line-height: 52px;
+}
+
+.display-small {
+  font-size: var(--fs-display-small);
+  font-weight: var(--weight-regular);
+  line-height: 44px;
+}
+
+.headline-large {
+  font-size: var(--fs-headline-large);
+  font-weight: var(--weight-regular);
+  line-height: 40px;
+}
+
+.headline-medium {
+  font-size: var(--fs-headline-medium);
+  font-weight: var(--weight-regular);
+  line-height: 36px;
+}
+
+.headline-small {
+  font-size: var(--fs-headline-small);
+  font-weight: var(--weight-regular);
+  line-height: 32px;
+}
+
+.title-large {
+  font-size: var(--fs-title-large);
+  font-weight: var(--weight-regular);
+  line-height: 28px;
+}
+
+.title-medium {
+  font-size: var(--fs-title-medium);
+  font-weight: var(--weight-regular);
+  line-height: 24px;
+}
+
+.title-small {
+  font-size: var(--fs-title-small);
+  font-weight: var(--weight-regular);
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.label-large {
+  font-size: var(--fs-label-large);
+  font-weight: var(--weight-regular);
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.label-medium {
+  font-size: var(--fs-label-medium);
+  font-weight: var(--weight-regular);
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+
+.label-small {
+  font-size: var(--fs-label-small);
+  font-weight: var(--weight-regular);
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
+
+.body-large {
+  font-size: var(--fs-body-large);
+  font-weight: var(--weight-regular);
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+.body-medium {
+  font-size: var(--fs-body-medium);
+  font-weight: var(--weight-regular);
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.body-small {
+  font-size: var(--fs-body-small);
+  font-weight: var(--weight-regular);
+  line-height: 16px;
+  letter-spacing: 0.4px;
+}
+
+
+/*------------------------------*\
+  #REUSED STYLE
+\*------------------------------*/
+.material-symbol-outlined {
+  display: block;
+  font-size: 2.6rem;
+  width: 1em;  height: 1em;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+}
+
+:has(> .state-layer) {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ripple,
+.state-layer {
+  background-color: var(--state-layer-bg);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.state-layer {
+  border-radius: inherit;
+  inset: 0;
+  opacity: 0;
+  transition: var(--motion-duration-short-2) var(--motion-easing-linear);
+}
+
+:has(> .state-layer):hover > .state-layer { opacity: 0.08; }
+
+:has(> .state-layer):is(:focus, :focus-visible, :active) > .state-layer {
+  opacity: 0.12;
+}
+
+
+.ripple {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transform-origin: center;
+  border-radius: var(--radius-circle);
+  opacity: 0.12;
+  animation: ripple 800ms var(--motion-easing-standard) forwards;
+}
+
+@keyframes ripple {
+  0% { scale: 0; }
+  100% { scale: 2.5; }
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 2.6rem;
+  font-weight: var(--weight-medium);
+  line-height: 28px;
+  letter-spacing: -0.5px;
+}
+
+.divider {
+  height: 1px;
+  max-width: 100%;
+  background-color: var(--outline-variant);
+}
+
+
+/*------------------------------*\
+  #COMPONENT
+\*------------------------------*/
+
+/***
+ *  Icon button
+ */
+
+.icon-btn {
+  color: var(--on-surface-variant);
+  --state-layer-bg: var(--on-surface-variant);
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-circle);
+}
+
+.icon-btn > .state-layer { inset: 4px; }
+
+.icon-btn > .ripple {
+  width: 40px;
+  height: 40px;
+  animation: icon-button-ripple 200ms var(--motion-easing-standard) forwards;
+}
+
+@keyframes icon-button-ripple {
+  0% { scale: 0; }
+  100% { scale: 1; }
+}
+
+
+

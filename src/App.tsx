@@ -1,7 +1,11 @@
+import { Header } from "./components"
 
 const App = () => {
   return (
-    <div>pixstock Starter</div>
+    <>
+      {/* HEADER */}
+      <Header />
+    </>
   )
 }
 
