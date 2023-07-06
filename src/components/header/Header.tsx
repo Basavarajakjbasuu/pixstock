@@ -19,6 +19,9 @@ import { ThemeContext } from "../../context/ThemeProvider";
 
 const Header: React.FC = () => {
   const [isHeaderActive, setIsHeaderActive] = useState(false);
+  const [toggleSearch, setToggleSearch] = useState(false)
+ 
+  const { toggleTheme } = useContext(ThemeContext);
 
   //activating header on scrollY > 50 with useEffect
   useEffect(() => {
@@ -34,8 +37,17 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  // Clear input data when click on close icon
+  const [inputValue, setInputValue] = useState('');
 
-  const { toggleTheme } = useContext(ThemeContext);
+  const handleInputChange = (event:  React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value)
+  }
+
+  const handleClearClick = () => {
+    setInputValue('');
+  };
+
   return (
     <header className={`top-app-bar ${isHeaderActive ? 'active' : ''}`} data-header>
       
@@ -57,15 +69,14 @@ const Header: React.FC = () => {
       <a href="/" className="logo">Pixstock</a>
 
       {/* Search bar */}
-      <div className="search-view" data-search-view>
+      <div className={`search-view ${toggleSearch ? 'show' : ''}`} data-search-view>
 
         <div className="search-bar">
 
           <button
             className="icon-btn search-open"
             aria-label="Close search"
-            data-search-toggler
-            data-ripple
+            onClick={() => setToggleSearch(false)}
           >
             <span className="material-symbol-outlined">
               <MdOutlineArrowBack />
@@ -87,6 +98,8 @@ const Header: React.FC = () => {
               className="input-field body-large"
               autoComplete="off"
               data-search-field
+              value={inputValue}
+              onChange={handleInputChange}
             />
 
           </div>
@@ -94,8 +107,7 @@ const Header: React.FC = () => {
           <button
             className="icon-btn"
             aria-label="Clear search"
-            data-search-clear-btn
-            data-ripple
+            onClick={handleClearClick}
           >
             <span className="material-symbol-outlined">
               <MdOutlineClose />
@@ -217,8 +229,7 @@ const Header: React.FC = () => {
       <button
         className="icon-btn search-open"
         aria-label="Open search"
-        data-search-toggler
-        data-ripple
+        onClick={() => setToggleSearch(true)}
       >
         <span className="material-symbol-outlined">
           <MdOutlineSearch />
