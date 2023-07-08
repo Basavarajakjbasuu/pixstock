@@ -17,9 +17,13 @@ import './header.css'
 
 import { ThemeContext } from "../../context/ThemeProvider";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onToggleSidebar: () => void;
+}
+
+const Header = ({ onToggleSidebar }: HeaderProps) => {
   const [isHeaderActive, setIsHeaderActive] = useState(false);
-  const [toggleSearch, setToggleSearch] = useState(false)
+  const [toggleSearch, setToggleSearch] = useState(false);
  
   const { toggleTheme } = useContext(ThemeContext);
 
@@ -55,8 +59,8 @@ const Header: React.FC = () => {
       <button
         className="icon-btn"
         aria-label="Open menu"
-        data-nav-toggler
         data-ripple
+        onClick={onToggleSidebar}
       >
         <span className="material-symbol-outlined">
         <MdOutlineMenu />
