@@ -1,5 +1,6 @@
 
 import Banners from '../Banner/Banners';
+import Photos from '../photos/Photos';
 
 import './main.css';
 
@@ -9,6 +10,7 @@ const Main = () => {
 
       <article>
         <Banners />
+        <Photos />
       </article>
 
     </main>
