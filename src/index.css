@@ -184,12 +184,12 @@
   --primary: var( --dark-primary);
   --on-primary: var(--dark-on-primary);
   --primary-container: var(--dark-primary-container);
-  --on-primary-container: var(--dark-on-primary);
+  --on-primary-container: var(--dark-on-primary-container);
   --secondary: var(--dark-secondary);
   --on-secondary: var(--dark-on-secondary);
   --secondary-container: var(--dark-secondary-container);
   --on-secondary-container: var(--dark-on-secondary-container);
-  --tertiary: var(--dark-on-tertiary);
+  --tertiary: var(--dark-tertiary);
   --on-tertiary: var(--dark-on-tertiary);
   --tertiary-container: var(--dark-tertiary-container);
   --on-tertiary-container: var(--dark-on-tertiary);
@@ -225,7 +225,7 @@
   --on-secondary: var(--light-on-secondary);
   --secondary-container: var(--light-secondary-container);
   --on-secondary-container: var(--light-on-secondary-container);
-  --tertiary: var(--light-on-tertiary);
+  --tertiary: var(--light-tertiary);
   --on-tertiary: var(--light-on-tertiary);
   --tertiary-container: var(--light-tertiary-container);
   --on-tertiary-container: var(--light-on-tertiary);
@@ -511,4 +511,46 @@ button:disabled{
 }
 
 
+/***
+ * Button
+ */
 
+.btn {
+  height: 40px;
+  max-width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 24px;
+  border-radius: var(--radius-full);
+  transition: box-shadow var(--motion-duration-short-2) var(--motion-easing-linear);
+}
+
+.btn:hover { 
+  box-shadow: var(--elevation-1);
+}
+
+.btn:focus { box-shadow: none; }
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  --state-layer-bg: var(--on-primary)
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+  --state-layer-bg: var(--on-secondary)
+}
+
+.btn-tertiary {
+  background-color: var(--tertiary);
+  color: var(--on-tertiary);
+  --state-layer-bg: var(--on-tertiary)
+}
+
+/**
+ * card
+ */
+ 
