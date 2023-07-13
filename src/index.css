@@ -504,6 +504,7 @@ button:disabled{
   display: flex;
   margin-left: -15px;
   width: auto;
+  overflow: hidden;
 }
 
 .my-masonry-grid_column {
@@ -511,9 +512,6 @@ button:disabled{
   background-clip: padding-box;
 }
 
-.grid-item {
-  margin-bottom: 15px;
-}
 
 .img-cover {
   width: 100%;
@@ -551,6 +549,28 @@ button:disabled{
   0% { opacity: 0.5; }
   100% { opacity: 1; }
 }
+
+.card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background-color: var(--light-secondary-container);
+  color: var(--light-on-secondary-container);
+  border-radius: var(--radius-small);
+}
+
+/*------------------------------*\
+  #CURATED PHOTOS & POPULAR VIDEO
+\*------------------------------*/
+
+:where(.featured-photo, .popular-video) .my-masonry-grid_column {
+  margin-block-end: -800px;
+}
+
 
 /*------------------------------*\
   #COMPONENT

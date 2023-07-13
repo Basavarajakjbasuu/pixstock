@@ -1,10 +1,10 @@
 import axios from "axios";
-import { SearchCallback, SearchParameters, SuccessCallback, callback } from "../types";
+import { SearchParameters } from "../types";
 import { urlEncode } from "../utils/utils";
 
 const API_KEY: string = import.meta.env.VITE_PEXELS_API_KEY;
 
-export const fetchData = async function(url: string): Promise<void>  {
+export const fetchPhotos = async function(url: string): Promise<void>  {
   const headers = {
     'Authorization': API_KEY
   }
@@ -13,7 +13,14 @@ export const fetchData = async function(url: string): Promise<void>  {
   return response.data.photos;
 }
 
-let requestUrl = "";
+export const fetchVideos = async function(url: string): Promise<void>  {
+  const headers = {
+    'Authorization': API_KEY
+  }
+
+  const response = await axios.get(url, { headers });
+  return response.data.videos;
+}
 
 const root = {
   default: 'https://api.pexels.com/v1/',
@@ -59,29 +66,25 @@ export const client = {
     /**
      * Search videos
      * @param { Object } parameters Url Objects
-     * @param { Function } callback Callback Function
      */
-    search(parameters: SearchParameters, callback: SearchCallback): void {
-      requestUrl = `${root.videos}search?${urlEncode(parameters)}`;
-      fetchData(requestUrl, callback);
+    search(parameters: SearchParameters) {
+      return `${root.videos}search?${urlEncode(parameters)}`;
     },
 
     /**
      * Get Popular videos
      * @param { Object } parameters Url Objects
-     * @param { Function } callback Callback Function
      */
-    popular(parameters: object, callback: callback) {
-      fetchData(`${root.videos}popular?${urlEncode(parameters)}`, callback);
+    popular: (parameters: object) => {
+      return `${root.videos}popular?${urlEncode(parameters)}`
     },
 
     /**
      * Get single video detail
      * @param id Video ID
-     * @param callback Callback function
      */
-    detail(id: string, callback: callback):void {
-      fetchData(`${root.videos}videos/${id}`, callback);
+    detail(id: string): string {
+      return `${root.videos}videos/${id}`
     }
 
   },
@@ -89,24 +92,20 @@ export const client = {
   collections: {
 
     /**
-     * Get eatured collections
+     * Get featured collections
      * @param { Object } parameters Url Objects
-     * @param { Function } callback Callback Function
      */
-    featured(parameters: object, callback: callback): void {
-      requestUrl = `${root.default}collections/featured?${urlEncode(parameters)}`;
-      fetchData(requestUrl, callback);
+    featured(parameters: object): string {
+      return `${root.default}collections/featured?${urlEncode(parameters)}`;
     },
 
     /**
      * Get a collection media
      * @param id Collection ID
      * @param parameters Url object
-     * @param callback Callback function
      */
-    detail(id: string, parameters: object, callback: callback): void {
-      requestUrl = `${root.default}/collections/${id}?${urlEncode(parameters)}`
-      fetchData(requestUrl, callback);
+    detail(id: string, parameters: object): string {
+      return `${root.default}/collections/${id}?${urlEncode(parameters)}`
     }
 
   },

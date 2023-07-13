@@ -75,3 +75,11 @@ export interface ImageData {
     large: string;
   };
 }
+
+export interface VideoData {
+  height: number;
+  width: number;
+  id?: number;
+  image: string
+  video_files: [];
+}

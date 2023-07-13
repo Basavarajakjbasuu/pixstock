@@ -2,35 +2,33 @@ import './photos.css';
 
 import { useQuery } from '@tanstack/react-query';
 
-import { client, fetchData } from '../../api/apiConfig';
+import { client, fetchPhotos } from '../../api/apiConfig';
 import Photo from './Photo';
+
 import Masonry from 'react-masonry-css';
 
-const breakpointColumnsObj = {
-  default: 3,
-  1100: 2,
-  700: 2,
-};
+import PhotoSkeleton from '../skeleton/PhotoSkeleton';
+
+import { breakpointColumnsObj } from '../utils/utils';
+
 
 const Photos = () => {
 
   /**
    * Fetching URL from client obj
    */
-  const url = client.photos.curated({ page: 1, per_page: 22});
+  const url = client.photos.curated({ page: 1, per_page: 15});
   
   /**
    * By using useQuery() hook to fetch data 
    */
   const { data, isLoading} = useQuery({
-    queryKey: ['apiQuery'],
+    queryKey: ['photoAPI'],
     queryFn: async () => {
-      const data = await fetchData(url)
+      const data = await fetchPhotos(url)
       return data
     }
   });
-
-  // let isLoading = true;
 
   return (
     <section className="section featured-photo" aria-label='featured-label'>
@@ -38,14 +36,9 @@ const Photos = () => {
         
         <h2 className="title-large section-title" id='featured-label'>Featured photos</h2>
 
-
         {isLoading ? (
           <div className="media-grid" >
-            {Array.from({ length: 12 }).map((_, index) => (
-              <div className="column" key={index}>
-                <div className="skeleton" />
-              </div>
-            ))}
+            <PhotoSkeleton type="card" />
           </div>
         ) : (
           <Masonry

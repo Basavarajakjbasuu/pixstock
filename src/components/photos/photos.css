@@ -47,3 +47,5 @@
   color: var(--light-inverse-primary);
   --state-layer-bg: var(--light-inverse-primary)
 }
+
+.card.video { background-color: var(--surface-container-highest); }
