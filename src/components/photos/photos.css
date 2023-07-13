@@ -14,8 +14,7 @@
   overflow: hidden;
   transition: box-shadow var(--motion-duration-short-1) var(--motion-easing-linear);
 
-  break-inside: avoid;
-  
+  margin-bottom: 8px;
   --state-layer-bg: var(--on-surface);
 }
 

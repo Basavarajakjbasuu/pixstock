@@ -496,7 +496,23 @@ button:disabled{
   grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
   gap: var(--column-gap);
 
-  /* overflow: hidden; */
+  overflow: hidden;
+} 
+
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -15px;
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 10px;
+  background-clip: padding-box;
+}
+
+.grid-item {
+  margin-bottom: 15px;
 }
 
 .img-cover {
@@ -509,7 +525,7 @@ button:disabled{
   display: flex;
   flex-direction: column;
   gap: var(--column-gap);
-  align-self: flex-start;
+  align-self: flex-start; 
 }
 
 .overlay-btn {

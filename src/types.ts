@@ -70,7 +70,7 @@ export interface ImageData {
   avg_color: string;
   width: number;
   height: number;
-  id: number;
+  id?: number;
   src: {
     large: string;
   };
