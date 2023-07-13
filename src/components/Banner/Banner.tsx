@@ -1,6 +1,6 @@
 
 import { CardImageBanner, CardVideoBanner } from "..";
-import { BannerProps } from "../types";
+import { BannerProps } from "../../types";
 
 import "./banner.css";
 

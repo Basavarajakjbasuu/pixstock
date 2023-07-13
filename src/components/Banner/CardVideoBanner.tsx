@@ -1,4 +1,4 @@
-import { CardVideoBannerProps } from "../types"
+import { CardVideoBannerProps } from "../../types"
 
 const CardVideoBanner = ({ gridArea, videoUrl, height, width }: CardVideoBannerProps) => {
   

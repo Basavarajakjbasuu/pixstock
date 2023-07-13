@@ -176,8 +176,8 @@
   --on-surface: var(--dark-on-surface);
   --surface-variant: var(--dark-surface-variant);
   --on-surface-variant: var(--dark-on-surface);
-  --surface-container-high: var(--dark-surface-container); 
-  --surface-container-highest: var(--dark-surface-container);
+  --surface-container-high: var(--dark-surface-container-high); 
+  --surface-container-highest: var(--dark-surface-container-highest);
   --surface-container: var(--dark-surface-container);
   --outline: var(--dark-outline);
   --outline-variant: var(--dark-outline-variant);
@@ -212,8 +212,8 @@
   --on-surface: var(--light-on-surface);
   --surface-variant: var(--light-surface-variant);
   --on-surface-variant: var(--light-on-surface);
-  --surface-container-high: var(--light-surface-container); 
-  --surface-container-highest: var(--light-surface-container);
+  --surface-container-high: var(--light-surface-container-high); 
+  --surface-container-highest: var(--light-surface-container-highest);
   --surface-container: var(--light-surface-container);
   --outline: var(--light-outline);
   --outline-variant: var(--light-outline-variant);
@@ -524,6 +524,17 @@ button:disabled{
   z-index: 1;
 }
 
+.skeleton {
+  background-color: var(--surface-container-highest);
+  border-radius: var(--radius-medium);
+  aspect-ratio: 2 / 3;
+  animation: skeleton-loading 1000ms linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
 
 /*------------------------------*\
   #COMPONENT

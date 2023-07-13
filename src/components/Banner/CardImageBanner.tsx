@@ -1,4 +1,4 @@
-import { CardImageBannerProps } from "../types"
+import { CardImageBannerProps } from "../../types"
 
 
 const CardImageBanner = ({ gridArea, imageUrl }: CardImageBannerProps) => {

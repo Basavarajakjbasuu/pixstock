@@ -18,6 +18,8 @@ const App = () => {
     setIsSidebarOpen(false);
   };
 
+  
+
   return (
     <div data-theme={ isDarkTheme === true ? 'dark' : 'light' } className="body">
       {/* HEADER */}
